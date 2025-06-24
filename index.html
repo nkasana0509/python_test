@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitZone Gym</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>FitZone</h2>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Join Us</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Build Your Dream Body</h1>
+    <p>Train harder. Eat better. Live stronger.</p>
+  </div>
+
+  <div class="section" id="services">
+    <h2>Our Programs</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Weight Training</h3>
+        <p>Muscle building with top trainers and equipment.</p>
+      </div>
+      <div class="card">
+        <h3>Cardio & HIIT</h3>
+        <p>Burn fat and boost stamina with fast-paced sessions.</p>
+      </div>
+      <div class="card">
+        <h3>Yoga & Flexibility</h3>
+        <p>Improve your flexibility and reduce stress with yoga.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>Join FitZone Today</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Fitness Goal" rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="form-msg" style="margin-top: 15px;"></p>
+  </div>
+
+  <footer>
+    &copy; 2025 FitZone Gym. All rights reserved.
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById("form-msg").innerText = "Thanks! We'll contact you soon!";
+    }
+  </script>
+</body>
+</html>
